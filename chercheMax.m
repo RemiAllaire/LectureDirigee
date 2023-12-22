@@ -2,15 +2,15 @@
 %de la fonction de la force externe sin(i *t *pi). avec comme condition
 %initiale
 
-PositionInitiale = @(x)sin(8*pi*x);  %  À modifier selon les essais
-VitesseInitiale =  @(x)sin(4*pi*x);
+PositionInitiale = @(x) sin(x*pi*4);  %  À modifier selon les essais
+VitesseInitiale =  @(x) 2*sin(x*pi*3);
 
 
 xx =0:0.01:10;
 j = 100;
     yy = [];
     for i = 0:0.01:10
-        yy = [yy, OndesSansMemoire(PositionInitiale,VitesseInitiale,@(t)sin(i*t*pi), 100,5)];
+        yy = [yy, OndesSansMemoire(PositionInitiale,VitesseInitiale,@(t)sin(i*t*pi), 50,10)];
     end
     yy;
     figure
